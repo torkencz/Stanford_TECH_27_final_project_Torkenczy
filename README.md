@@ -1,4 +1,4 @@
-# TECH 27 Final Project: Advanced Single-Cell RNA-seq Analysis
+# Stanford TECH 27 Final Project: Advanced Single-Cell RNA-seq Analysis
 **Author: Torkenczy**  
 **Course: TECH 27 - Machine Learning for Bioinformatics**
 
@@ -100,8 +100,8 @@ pip install jupyter notebook  # For running notebooks
 ### **Quick Start**
 ```bash
 # 1. Clone repository
-git clone https://github.com/[username]/TECH_27_final_project_Torkenczy.git
-cd TECH_27_final_project_Torkenczy
+git clone https://github.com/torkencz/Stanford_TECH_27_final_project_Torkenczy.git
+cd Stanford_TECH_27_final_project_Torkenczy
 
 # 2. Download data (creates data/ subdirectories)
 python scripts/download_data_unified.py --mode both --verbose
@@ -223,7 +223,7 @@ python scripts/run_pipeline_unified.py --mode annotated --analysis cross_dataset
 
 **Author**: Torkenczy  
 **Course**: TECH 27 - Machine Learning for Bioinformatics  
-**Institution**: [Your Institution]  
+**Institution**: Stanford University  
 
 For questions about methodology, implementation, or results, please open an issue in this repository.
 
