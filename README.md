@@ -6,12 +6,7 @@
 
 This project presents a comprehensive **single-cell RNA sequencing (scRNA-seq) analysis pipeline** for cell type classification across multiple datasets. The work demonstrates advanced machine learning techniques applied to high-dimensional biological data, with a novel **Union Highly Variable Genes (HVG) strategy** that significantly outperforms existing transfer learning approaches.
 
-### 🏆 Key Achievements
-- **97-99% accuracy** in cross-dataset cell type prediction
-- **11 machine learning algorithms** comprehensively evaluated
-- **Novel Union HVG feature selection** strategy that outperforms transfer learning
-- **Comprehensive transfer learning analysis** comparing custom and state-of-the-art methods
-- **Robust cross-dataset validation** across three independent PBMC datasets
+For summary of results please download the slides, where I also recorded my voice to explain.
 
 ## 📊 Datasets
 
@@ -114,6 +109,7 @@ python scripts/run_pipeline_unified.py --mode not_annotated --analysis both --ve
 
 # 5. View results in notebooks/
 jupyter notebook notebooks/final_project_marker_based.ipynb
+jupyter notebook notebooks/final_project_expert_annotation.ipynb
 ```
 
 ### **Command Line Options**
@@ -122,45 +118,6 @@ All scripts support:
 - `--analysis`: `same_dataset`, `cross_dataset`, or `both` (ML pipeline only)
 - `--verbose` / `--quiet`: Control output verbosity
 
-## 🎯 Key Results
-
-### **Same-Dataset Performance** (PBMC 3k internal validation)
-| Model | CV Accuracy | Test Accuracy | F1-Score | ROC-AUC |
-|-------|-------------|---------------|----------|---------|
-| **Logistic Regression** | **97.6%** | **97.9%** | 97.8% | 99.8% |
-| **Keras MLP** | 98.0% | 97.6% | 97.6% | 99.8% |
-| **SVM (RBF)** | 97.8% | 97.6% | 97.5% | 99.9% |
-
-### **Cross-Dataset Performance** (Train on PBMC 3k → Test on external)
-| Dataset | Best Model | Accuracy | Key Insight |
-|---------|------------|----------|-------------|
-| **PBMC CITE-seq** | Naive Bayes | **98.9%** | Excellent generalization |
-| **PBMC Multiome** | Keras 1D CNN | **97.5%** | Robust across technologies |
-
-### **Transfer Learning vs Traditional ML**
-| Method | CITE-seq | Multiome | Feature Set |
-|--------|----------|----------|-------------|
-| **Union HVG Strategy** | **98.9%** | **97.5%** | 2,947 curated genes |
-| Scanpy Ingest | 54.7% | 88.5% | ~11,700 raw genes |
-| k-NN Transfer | 53.3% | 65.9% | ~11,700 raw genes |
-
-## 💡 Scientific Contributions
-
-### **1. Union HVG Strategy Innovation**
-- **Novel feature selection approach** identifying optimal gene sets across datasets
-- **97-99% accuracy** vs 54-88% for transfer learning methods
-- **Demonstrates feature engineering > algorithmic sophistication**
-
-### **2. Comprehensive Transfer Learning Analysis**
-- **Systematic comparison** of feature availability impact
-- **Three feature strategies**: HVG-filtered (148-334 genes), Full datasets (~11,700 genes), Union HVG (2,947 genes)
-- **Validates that quality > quantity** in biological feature selection
-
-### **3. Cross-Dataset Validation Framework**
-- **Robust evaluation** across independent datasets and technologies
-- **Cell type harmonization** enabling fair cross-dataset comparison  
-- **Reproducible pipeline** with comprehensive documentation
-
 ## 📈 Performance Insights
 
 **Key Findings**:
@@ -168,20 +125,6 @@ All scripts support:
 2. **Traditional ML excels with proper preprocessing**: Careful feature selection enables superior generalization
 3. **Cross-dataset success**: Models generalize excellently across different single-cell technologies
 4. **Biological interpretability**: Union HVG strategy selects biologically meaningful genes
-
-## 🔬 Technical Details
-
-**Computational Approach**:
-- **Sparse matrix optimization** for memory efficiency
-- **Stratified cross-validation** for robust performance estimation  
-- **Comprehensive metrics** beyond accuracy (precision, recall, specificity, AUC)
-- **High-quality visualizations** (300+ DPI) for publication
-
-**Reproducibility**:
-- **Modular pipeline design** with unified scripts
-- **Verbose/quiet modes** for different use cases
-- **Comprehensive logging** and error handling
-- **Automated figure generation** with consistent styling
 
 ## 📚 Usage Examples
 
@@ -205,27 +148,17 @@ python scripts/test_transfer_learning_full_data.py
 python scripts/download_data_unified.py --mode annotated
 python scripts/eda_unified.py --mode annotated
 python scripts/run_pipeline_unified.py --mode annotated --analysis cross_dataset
-```
 
-## 📋 Citation
+#View results in notebooks/
 
-```bibtex
-@misc{torkenczy2024singlecell,
-  title={Advanced Single-Cell RNA-seq Analysis with Union HVG Strategy},
-  author={Torkenczy},
-  year={2024},
-  howpublished={TECH 27 Final Project},
-  note={Machine Learning for Bioinformatics}
-}
+jupyter notebook notebooks/final_project_expert_annotation.ipynb
 ```
 
 ## 📞 Contact
 
-**Author**: Torkenczy  
+**Author**: Kristof Torkenczy
 **Course**: TECH 27 - Machine Learning for Bioinformatics  
-**Institution**: Stanford University  
+ 
 
 For questions about methodology, implementation, or results, please open an issue in this repository.
 
----
-*This project demonstrates advanced machine learning applications in computational biology, with novel contributions to cross-dataset single-cell analysis.*
