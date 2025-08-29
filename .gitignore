@@ -1,0 +1,64 @@
+# Data files (too large for git)
+data/annotated/
+data/not_annotated/
+data/cache/
+*.h5ad
+*.csv.gz
+*.tar.gz
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# R (for expert annotation approach)
+.Rhistory
+.RData
+.Ruserdata
+
+# LaTeX (from PDF generation)
+*.aux
+*.log
+*.synctex.gz
+*.fdb_latexmk
+*.fls
+*.out
+*.toc
+
+# Temporary files
+*.tmp
+*.temp
+temp/
+tmp/
+
+# Large figure files (keep only essential)
+figures/old/
+figures/temp/
+*.png.bak
+*.pdf.bak
